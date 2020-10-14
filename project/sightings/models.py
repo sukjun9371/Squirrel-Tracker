@@ -35,7 +35,7 @@ class Squirrel(models.Model):
             default=Am,
             )
 
-    Date = models.DateField(
+    date = models.DateField(
             help_text=_('Date when you saw the squirrel'),
             )
 
@@ -54,6 +54,9 @@ class Squirrel(models.Model):
             help_text=_('your guess: how old was the squirrel?'),
             choices=AGE_CHOICES,
              )
+
+    def __str__(self):
+        return self.unique_squirrel_id
 
 
 

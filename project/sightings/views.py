@@ -28,4 +28,4 @@ def add(request):
 def stats(request):
     return render(request,'sightings/stats.html')
 
-# Create your views here.
+#Create your views here.

@@ -1,11 +1,33 @@
 <html>
 	<body>
-		- Latitude :  {{ squirrel.latitude}}
-		- Longitude : {{ squirrel.longitude }}
-		- Unique Squirrel ID : {{ squirrel.unique_squirrel_id}}
-		- Shift : {{ squirrel.shift }}
-		- ate : {{ squirrel.date }}
-		- Age : {{ squirrel.age }}
+		<strong> Squirrel {{squirrel.unique_squirrel_id }} Information</strong>
+		</br>
+		<form id="submit" method="post" action="{% url 'sightings:create' %)">
+				{% csrf_token %}
+				<div>
+					<label for="latitude"> LATITUDE </label></br>
+					- Current : {{ squirrel.latitude }} </br>
+					- Update : <input type="float" name="latitude" id="latitude">
+				</div>
+				<div>
+                                        <label for="longitude"> LONGITUDE </label></br>
+                                        - Current : {{ squirrel.longitude }} </br>
+                                        - Update : <input type="float" name="longitude" id="longitude">
+                                </div>
+				<div>
+                                        <label for="unique_squirrel_id"> UNIQUE SQUIRREL ID </label></br>
+                                        - Current : {{ squirrel.unique_squirrel_id }} </br>
+                                        - Update : <input type="float" name="unique_squirrel_id" id="unique_squirrel_id">
+                                </div>
+				<input type="submit" value="ADD">
+		</form>			
+		<ul>
+			<li> Shift : {{ squirrel.shift }} </li>
+			<li> Date : {{ squirrel.date }} </li>
+			<li> Age : {{ squirrel.age }} </li>
+		</ul>
+		</br>
+		<a href="/sightings/">BACK to lists</a>
 	</body>
 </html>
 

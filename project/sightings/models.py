@@ -211,7 +211,7 @@ class Squirrel(models.Model):
 
     def lat_long(self):
         return (self.latitude, self.longitude)
->>>>>>> 0c6220c6f2804722e3516af7aee47501501a126c
+
 
     def __str__(self):
         return self.unique_squirrel_id

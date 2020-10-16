@@ -6,9 +6,9 @@
 			{% for squirrel in squirrels %}
 			<strong> {{squirrel.unique_squirrel_id}}</strong>
 			<ul>
-					<li> {{ squirrel.unique_squirrel_id }} </li>
-					<li> {{ squirrel.date }} </li>
-					<li> <a href="{ % url 'sighitngs:detail'  {squirrel.unique_squirrel_id} % }">Go to Details</a></li>
+				<li> {{ squirrel.unique_squirrel_id }} </li>
+				<li> {{ squirrel.date }} </li>
+				<li><a href="/sightings/{{ squirrel.unique_squirrel_id }}/">Go to Details</a></li>
 			</ul>
 			{% endfor %}
 		</ul>

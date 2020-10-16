@@ -1,10 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, JsonResponse
+
+from .forms import AddRequestForm
 
 from .models import Squirrel
-
-
 
 def index(request):
     squirrels =  Squirrel.objects.all()
@@ -27,5 +26,15 @@ def add(request):
 
 def stats(request):
     return render(request,'sightings/stats.html')
+
+def create(request):
+    if request.method == 'POST':
+        form = AddRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request,'sightings/add.html')
+        else:
+            return JsonResponse({'errors':form.errors},status=400)
+    return redirect(request,'sightings/add.html')
 
 #Create your views here.

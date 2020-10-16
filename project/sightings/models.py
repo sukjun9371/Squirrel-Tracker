@@ -55,6 +55,26 @@ class Squirrel(models.Model):
             choices=AGE_CHOICES,
              )
 
+    Gray = 'gray'
+    Black = 'black'
+    Cinnamon = 'cinnamon'
+    Unknown = 'unknown'
+
+    FUR_CHOICES = [
+            (Gray,_('gray')),
+            (Black,_('black')),
+            (Cinnamon,_('cinnamon')),
+            (Unknown,_('unknown')),
+            ]
+
+    primary_fur_color = models.CharField(
+            max_length=10,
+            help_text=_('Primary fur color of the squirrel'),
+            choices=FUR_CHOICES,
+            default=Unknown,
+            )
+
+
     def __str__(self):
         return self.unique_squirrel_id
 

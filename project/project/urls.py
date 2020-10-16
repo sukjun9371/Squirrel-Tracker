@@ -20,8 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('map/',include('map.urls')),
     path('sightings/',include('sightings.urls')),
-<<<<<<< HEAD
-=======
-
->>>>>>> d4157c4891766971482e2ac72db45371230b2a7f
 ]

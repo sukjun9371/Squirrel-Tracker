@@ -11,6 +11,7 @@ urlpatterns = [
         path('stats/',views.stats, name="stats"),
         path('create/',views.create, name="create"),
         path('<str:unique_squirrel_id>/',views.detail, name='detail'),
+        path('<str:unique_squirrel_id>/update/', views.update, name='update'),
         ]
 
 

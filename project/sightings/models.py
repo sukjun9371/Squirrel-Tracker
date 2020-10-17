@@ -94,7 +94,7 @@ class Squirrel(models.Model):
     highlight_fur_color = models.CharField(
             max_length = 20,
             blank = True,
-            default = ""
+          default = ""
             )
 
     def combination_color(self):

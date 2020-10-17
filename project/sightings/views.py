@@ -37,4 +37,21 @@ def create(request):
             return JsonResponse({'errors':form.errors},status=400)
     return redirect(request,'sightings/add.html')
 
+def update(request,unique_squirrel_id):
+
+    squirrel = get_object_or_404(Squirrel, pk=unique_squirrel_id)
+    context = {
+            'squirrel' : squirrel,
+            }
+
+    if request.method == 'POST':
+        squirrel.latitude = request.POST['latitude']
+        squirrel.longitude = request.POST['longitude']
+        squirrel.save()
+        return redirect(request, '/sighhtings/update.html', context)
+
+    else:
+        return render(request,'sightings/update.html', context)
+
+
 #Create your views here.

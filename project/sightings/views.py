@@ -48,7 +48,7 @@ def update(request,unique_squirrel_id):
         squirrel.latitude = request.POST['latitude']
         squirrel.longitude = request.POST['longitude']
         squirrel.save()
-        return redirect(request, '/sighhtings/detail.html', context)
+        return render(request, 'sightings/detail.html', context)
 
     else:
         return render(request,'sightings/update.html', context)

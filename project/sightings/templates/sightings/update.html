@@ -2,7 +2,7 @@
 	<body>
 		<strong> Squirrel {{squirrel.unique_squirrel_id}} Information</strong>
 		</br>
-		<form id='submit' method='post' action="">
+		<form id='submit' method='post'>
 			{% csrf_token %}
 			 Latitude : <input type='float' name='latitude' id='latitude'></br>
 		 	Longitude : <input type='float' name='longitude' id='longitude'></br>

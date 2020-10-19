@@ -1,25 +1,39 @@
-<html>
-	<body>
-		<strong> Squirrel {{squirrel.unique_squirrel_id}} Information</strong>
-		</br>
-		<form id='submit' method='post'>
-			{% csrf_token %}
-			 Latitude : <input type='float' name='latitude' id='latitude'></br>
-		 	Longitude : <input type='float' name='longitude' id='longitude'></br>
-			Unique Squirrel ID : {{ squirrel.unique_squirrel_id }} </br>
-			Shift : <select name='shift' id='shift'> 
-					<option value = "AM">AM</option>
-					<option value = "PM">PM</option>
-			</select></br>
-			Date : <input type='date' name='date' id='date'></br>
-			Age : <select name='age' id='age'>
-				<option value='adult'>Adult</option>
-				<option value='juvenile'>Juvenile</option>
-				<option value='unknown'>Unknown</option>
-			</select></br>
+{% extends 'sightings/base.html' %}
+
+{% load static %}
+  
+{% block main %}
+
+<body class="py-4">
+        <div class="container">
+                <h1> {{squirrel.unique_squirrel_id}}</h1>
+                <p class="lead">
+                "You can update the information about the sighting if necessary"
+                </p>
+		<form id="submit" method="post">
+				  {% csrf_token %}
+                <div class="row mb-3">
+                        <div class="col-md-4 themed-grid-col">Unique Squirrel ID</div>
+                        <div class="col-md-8 themed-grid-col">{{squirrel.unique_squirrel_id}}</div>
+                        <div class="col-md-4 themed-grid-col">Latitude</div>
+                        <div class="col-md-8 themed-grid-col"><input type='float' name='latitude' id='latitude'></div>
+                        <div class="col-md-4 themed-grid-col">Longitude</div>
+                        <div class="col-md-8 themed-grid-col"><input type='float' name='longitude' id='longitude'></div>
+                        <div class="col-md-4 themed-grid-col">Shift</div>
+			<div class="col-md-8 themed-grid-col"><select name="shift" id="shift">
+					<option value="AM">AM</option>
+					<option value="PM">PM</option></select></div>
+                        <div class="col-md-4 themed-grid-col">Date</div>
+                        <div class="col-md-8 themed-grid-col"><input type='date' name='date' id='date'></div>
+                        <div class="col-md-4 themed-grid-col">Age</div>
+                        <div class="col-md-8 themed-grid-col"><select name='age' id='age'>
+                                <option value='adult'>Adult</option>
+                                <option value='juvenile'>Juvenile</option>
+				<option value='unknown'>Unknown</option></select></div>
 			<input type="submit" value="EDIT">
-		</form>
-		</br>
-	<a href="/sightings/{{ squirrel.unique_squirrel_id }}">BACK</a>
-</html>
+                </div>
+                </form>
+        <a href="/sightings/{{ squirrel.unique_squirrel_id }}">BACK</a>
+                {% endblock %}
+
 

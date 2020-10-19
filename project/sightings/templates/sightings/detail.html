@@ -1,19 +1,33 @@
-<html>
-	<body>
-		<strong> Squirrel {{squirrel.unique_squirrel_id }} Information</strong>
-		</br>			
-		<ul>
-			<li> Latitude : {{ squirrel.latitude }}</li>
-			<li> Longitude : {{ squirrel.longitude }}</li>
-			<li> Unique Squirrel ID : {{ squirrel.unique_squirrel_id }} </li>
-			<li> Shift : {{ squirrel.shift }} </li>
-			<li> Date : {{ squirrel.date }} </li>
-			<li> Age : {{ squirrel.age }} </li>
-		</ul>
-		</br>
-		<a href="/sightings/{{ squirrel.unique_squirrel_id }}/update/ ">EDIT</a></br>
+{% extends 'sightings/base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<body class="py-4">
+	<div class="container">
+		<h1> {{squirrel.unique_squirrel_id}}</h1>
+		<p class="lead">
+		"You can update the information about the sighting if necessary"
+		</p>
+		<div class="row mb-3">
+			<div class="col-md-4 themed-grid-col">Unique Squirrel ID</div>
+			<div class="col-md-8 themed-grid-col">{{squirrel.unique_squirrel_id}}</div>
+			<div class="col-md-4 themed-grid-col">Latitude</div>
+			<div class="col-md-8 themed-grid-col">{{squirrel.latitude}}</div></br>
+			<div class="col-md-4 themed-grid-col">Longitude</div>
+			<div class="col-md-8 themed-grid-col">{{squirrel.longitude}}</div></br>
+			<div class="col-md-4 themed-grid-col">Shift</div>
+			<div class="col-md-8 themed-grid-col">{{squirrel.shift}}</div></br>
+			<div class="col-md-4 themed-grid-col">Date</div>
+			<div class="col-md-8 themed-grid-col">{{squirrel.date}}</div></br>
+			<div class="col-md-4 themed-grid-col">Age</div>
+			<div class="col-md-8 themed-grid-col">{{squirrel.age}}</div></br>
+		</div>
+		<div>
+		<a href="/sightings/{{ squirrel.unique_squirrel_id }}/update/">EDIT</a></br>
 		<a href="/sightings/">BACK to lists</a>
-	</body>
-</html>
+		</div>
+		{% endblock %}
 
 		

@@ -30,6 +30,21 @@
           font-size: 3.5rem;
         }
       }
+
+
+	.themed-grid-col {
+  	padding-top: 15px;
+  	padding-bottom: 15px;
+  	background-color: rgba(86, 61, 124, .15);
+  	border: 1px solid rgba(86, 61, 124, .2);
+	}
+
+	.themed-container {
+ 	 padding: 15px;
+ 	 margin-bottom: 30px;
+ 	 background-color: rgba(0, 123, 255, .15);
+ 	 border: 1px solid rgba(0, 123, 255, .2);
+	}
     </style>
 
   </head>
@@ -47,8 +62,11 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
+	    <li class="nav-item active">
+		    <a class="nav-link" href="/map/">MAP<span class="sr-only"></span></a>
+	    </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/sightings/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/sightings/">Sightings<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/sightings/add">ADD</a>

@@ -1,175 +1,131 @@
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title> Add a sighting</title>
-		<meta name="viewport" content="width=device-width, inital-scale=1.0"?
-	</head>
+{% extends 'sightings/base.html' %}
 
-	<body>
+{% load static %}
 
+{% block main %}
 
-		<strong> Add the squirrel data here: </strong></br></br>
-		<form id="submit" method="post" action="{% url 'sightings:create' %}">
-			{% csrf_token %}
-			<Strong> You must write.. </strong></br>
-			<div>
-				<label for="latitude">LATITUDE</label>
-				<input type="float" name="latitude" id="latitude">
+<div class="container">
+	<h1>Add a Sighting</h1>
+	<p class="lead">
+	"Did you see a squirrel in Central Park? Here, you can add the sighting. It is your report that makes this squirrel-tracker more useful! 
+	</p>
+	<form id="submit" method="post" action="{% url 'sightings:create' %}">
+	{% csrf_token %}
+	<div class="row mb-3">
+		<div class="col-md-4 themed-grid-col"><strong> Required Info.</strong> </div>
+		<div class="col-md-8 themed-grid-col">
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Unique Squirrel ID </div>
+				<div class="col-md-6 themed-grid-col"><input type="text"  name="unique_squirrel_id" id="unique_squirrel_id"></div>
 			</div>
-			 <div>
-                                <label for="longitude">LONGITUDE</label>
-                                <input type="float" name="longitude" id="longitude">
-                        </div>
-			 <div>
-				 <label for="unique_squirrel_id">UNIQUE SQUIRREL ID</label>
-                                <input type="text" name="unique_squirrel_id" id="unique_squirrel_id">
-                        </div>
-			<div>
-				<label for="shift">SHIFT</label>
-				<select id="shift" name="shift">
-					<option value = "AM">AM</option>
-					<option value = "PM">PM</option>
-				</select>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Latitude </div>
+				<div class="col-md-6 themed-grid-col"><input type="float" name="latitude" id="latitude"></div>
 			</div>
-			<div>
-                                <label for="date">DATE</label>
-                                <input type="date" name="date" id="date">
-                        </div>
-			<div>
-                                <label for="age">AGE</label>
-                                <select id="age" name="age">
-                                        <option value = "adult">adult</option>
-                                        <option value = "juvenile">juvenile</option>
-					<option value = "unknonw">unknown</option>
-                                </select>
-                        </div>
-			</br>
-			<Strong> These are options </strong></br>
-			<div>
-                                <label for="primary_fur_color">Primary Fur Color</label>
-                                <select id="primary_fur_color" name="primary_fur_color">
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Longitude </div>
+                                <div class="col-md-6 themed-grid-col"><input type="floa
+t" name="longitude" id="longitude"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Shift </div>
+                                <div class="col-md-6 themed-grid-col">
+					<select id="shift" name="shift">
+                                      		<option value = "AM">AM</option>
+                                      		<option value = "PM">PM</option>
+                                	</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Date </div>
+				<div class="col-md-6 themed-grid-col"><input type="date" name="date" id="date"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Age </div>
+                                <div class="col-md-6 themed-grid-col">
+						<select id="age" name="age">
+                                        		<option value = "adult">adult</option>
+                                       			 <option value = "juvenile">juvenile</option>
+                                        		<option value = "unknonw">unknown</option>
+                               			 </select>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 themed-grid-col"><strong> Optional Info.</strong> </div>
+		<div class="col-md-8 themed-grid-col">
+			<div class="pb-3">
+				<strong>Fur Color</strong>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Primary Fur Color </div>
+                                <div class="col-md-6 themed-grid-col">
+					<select id="primary_fur_color" name="primary_fur_color">
                                         <option value = "gray">gray</option>
                                         <option value = "cinnamon">cinnamon</option>
                                         <option value = "black">black</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="location">LOCATION</label>
-                                <select id="location" name="location">
+                                	</select>
+				</div>
+			</div>
+			<div class="pb-3">
+				<strong>Location</strong>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Location </div>
+                                <div class="col-md-6 themed-grid-col">
+                                        <select id="location" name="location">
                                         <option value = "Ground Plane">Ground Plane</option>
                                         <option value = "Above Ground">Above Ground</option>
-                                </select>
-                        </div>
-			<div>
-				<label for="specific_location">SPECIFIC LOCATION</label>
-			<input type="text"  name="specific_location" id="specific_location">
-		</div>
-		<div>
-			<label for="running">RUNNING</label>
-			<select id="running" name="running">
-				<option value = False>False</option>
-				<option value = True>True</option>
-			</select>
-		</div>
-		<div>
-			<label for="chasing">CHASING</label>
-			<select id="chasing" name="chasing">
-				<option value = False>False</option>
-                                <option value = True>True</option>
-			</select>
-		</div>
-		<div>
-			<label for="climbing">CLIMBING</label>
-			<select id="climbing" name="climbing">
-                                <option value = False>False</option>
-                                <option value = True>True</option>
-                        </select>
-                                </select>
-                        </div>
-			<div>
-                                <label for="eating">EATING</label>
-                                <select id="eating" name="eating">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="foraging">FORAGING</label>
-                                <select id="foraging" name="foraging">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-				<label for="other_activities">OTHER ACTIVITIES</label>
-				<input type="text" name="other_activities" id="other_activities">
+                                        </select>
+                                </div>
 			</div>
-			<div>
-                                <label for="kuks">KUKS</label>
-                                <select id="kuks" name="kuks">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="quaas">QUAAS</label>
-                                <select id="quaas" name="quaas">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="moans">MOANS</label>
-                                <select id="moans" name="moans">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="tail_flags">TAIL FLAGS</label>
-                                <select id="tail_flags" name="tail_flags">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="tail_twitch">TAIL TWITCHES</label>
-                                <select id="tail_twitch" name="tail_twitch">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="approaches">APPROACHES</label>
-                                <select id="approaches" name="approaches">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="indifferent">INDIFFERENT</label>
-                                <select id="indifferent" name="indifferent">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-                                <label for="runs_from">RUNS FROM</label>
-                                <select id="runs_from" name="runs_from">
-                                        <option value = False>False</option>
-                                        <option value = True>True</option>
-                                </select>
-                        </div>
-			<div>
-				<label for="other_interactions">OTHER INTERACTIONS</label>
-				<input type="text" id="other_interactions" name="other_interactions">
-			</div>></br>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Specific Location </div>
+                                <div class="col-md-6 themed-grid-col"><input type="text" name="specific_location" id="specific_location"></div>
+			</div>
+			<div class="pb-3">
+				<strong>Activities</strong>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> Squirrel was.. </div>
+				<div class="col-md-6 themed-grid-col">
+				<label><input type="Checkbox" name="running" id="running" value=True>Running</label>
+				<label><input type="checkbox" name="chasing" id="chasing" value=True>Chasing</label>
+				<label><input type="checkbox" name="climbing" id="climbing" value=True>Climbing</label>
+				<label><input type="checkbox" name="eating" id="eating" value=True>Eating</label>
+				<label><input type="checkbox" nmae="foraging" id="foraging" value=True>Foraging</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col">Other Activities</div>
+				<div class="col-md-6 themed-grid-col"><input type="text" name="other_activities" id="other_activities"></div>
+			</div>
+			<div class="pb-3">
+				<strong> Interactions </strong>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col"> When squirrel saw me.. </div>
+				<div class="col-md-6 themed-grid-col">
+					<label><input type="checkbox" name="kuks" id="kuks" value=True>Kuks</label>
+					<label><input type="checkbox" name="quaas" id="quaas" value=True>Quaas</label>
+					<label><input type="checkbox" name="moans" id="moans" value=True>Moans</label>
+					<label><input type="checkbox" name="tail_flags" id="tail_flags" value=True>Tail Flags</label>
+					<label><input type="checkbox" name="tail_twitch" id="tail_twitch" value=True>Tail Twitch</label>
+					<label><input type="checkbox" name="approaches" id="approaches" value=True>Approaches</label>
+					<label><input type="checkbox" name="indifferent" id="indifferent" value=True>Indifferent</label>
+					<label><input type="checkbox" name="runs_from" id="runs_from" value=True>Runs From </label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 themed-grid-col">Other Interactions</div>
+				<div class="col-md-6 themed-grid-col"><input type="text" name="other_interactions" id="other_interactions"></div>
+			</div>
+		</div>
+	</div>
+		<input type="submit" value="ADD">
+	</form>
+	<a href="/sightings">BACK to Lists</a>
 
-			<input type="submit" value="ADD">
-		</form></br>
-		</br>
-		<a href="/sightings">Back to Lists</a>
-		<script>
-</html>
+	{% endblock %}
+
 
 

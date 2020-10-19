@@ -1,20 +1,40 @@
-<!doctype html>
+{% extends 'sightings/base.html' %}
 
-<html>
-	<body>
-		<ul>
-			{% for squirrel in squirrels %}
-			<strong> {{squirrel.unique_squirrel_id}}</strong>
+{% load static %}
+
+{% block main %}
+
+<div class="jumbotron">
+	<div class="container">
+		<h1 class="display-3">Squirrels in CentralPark</h1>
+		<p>
+		"Too many squirrels in Central Park? Don't worry. We can track them all. Squirrel tracking is what we are born to do. Let us do the tracking, and you can think of ways to take care of them."
+		</p>
+		<p>
+		<a class="btn btn-primary btn-lg" href="#" role="button">Learn more! </a>
+		</p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		{% for squirrel in squirrels %}
+		<div class="col-md-4">
+			<h2> {{squirrel.unique_squirrel_id }} </h2>
+			<p>
 			<ul>
-				<li> {{ squirrel.unique_squirrel_id }} </li>
-				<li> {{ squirrel.date }} </li>
-				<li><a href="/sightings/{{ squirrel.unique_squirrel_id }}/">Go to Details</a></li>
+				<li> Latitude : {{squirrel.latitude}} </li>
+				<li> Longitude : {{squirrel.longitude}}</li>
+				<li> Date : {{squirrel.date}}</li>
 			</ul>
-			{% endfor %}
-		</ul>
-		<a href="/sightings/add">ADD</a>
-		<a href="/sightings/stats">STATS</a>
-	</body>
-</html>
+			<p>
+			<p>
+			<a class="btn btn-secondary" href="/sightings/{{ squirrel.unique_squirrel_id }}/">Details & Update</a>
+			<p>
+		</div>
+		{% endfor %}
+	</div>
+	<hr>
+</div>
 
-
+{% endblock %}

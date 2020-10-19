@@ -1,43 +1,52 @@
 <html>
+	<head>
+		<meta charset="utf-8">
+		<title> Add a sighting</title>
+		<meta name="viewport" content="width=device-width, inital-scale=1.0"?
+	</head>
+
 	<body>
+
+
 		<strong> Add the squirrel data here: </strong></br></br>
 		<form id="submit" method="post" action="{% url 'sightings:create' %}">
 			{% csrf_token %}
 			<Strong> You must write.. </strong></br>
 			<div>
-				<label for="latitude">LATITUDE</label></br>
+				<label for="latitude">LATITUDE</label>
 				<input type="float" name="latitude" id="latitude">
 			</div>
 			 <div>
-                                <label for="longitude">LONGITUDE</label></br>
+                                <label for="longitude">LONGITUDE</label>
                                 <input type="float" name="longitude" id="longitude">
                         </div>
 			 <div>
-				 <label for="unique_squirrel_id">UNIQUE SQUIRREL ID</label></br>
+				 <label for="unique_squirrel_id">UNIQUE SQUIRREL ID</label>
                                 <input type="text" name="unique_squirrel_id" id="unique_squirrel_id">
                         </div>
 			<div>
-				<label for="shift">SHIFT</label></br>
+				<label for="shift">SHIFT</label>
 				<select id="shift" name="shift">
 					<option value = "AM">AM</option>
 					<option value = "PM">PM</option>
 				</select>
 			</div>
 			<div>
-                                <label for="date">DATE</label></br>
+                                <label for="date">DATE</label>
                                 <input type="date" name="date" id="date">
                         </div>
 			<div>
-                                <label for="age">AGE</label></br>
+                                <label for="age">AGE</label>
                                 <select id="age" name="age">
                                         <option value = "adult">adult</option>
                                         <option value = "juvenile">juvenile</option>
 					<option value = "unknonw">unknown</option>
                                 </select>
                         </div>
+			</br>
 			<Strong> These are options </strong></br>
 			<div>
-                                <label for="primary_fur_color">Primary Fur Color</label></br>
+                                <label for="primary_fur_color">Primary Fur Color</label>
                                 <select id="primary_fur_color" name="primary_fur_color">
                                         <option value = "gray">gray</option>
                                         <option value = "cinnamon">cinnamon</option>
@@ -45,32 +54,32 @@
                                 </select>
                         </div>
 			<div>
-                                <label for="location">LOCATION</label></br>
+                                <label for="location">LOCATION</label>
                                 <select id="location" name="location">
                                         <option value = "Ground Plane">Ground Plane</option>
                                         <option value = "Above Ground">Above Ground</option>
                                 </select>
                         </div>
 			<div>
-				<label for="specific_location">SPECIFIC LOCATION</label></br>
+				<label for="specific_location">SPECIFIC LOCATION</label>
 			<input type="text"  name="specific_location" id="specific_location">
 		</div>
 		<div>
-			<label for="running">RUNNING</label></br>
+			<label for="running">RUNNING</label>
 			<select id="running" name="running">
 				<option value = False>False</option>
 				<option value = True>True</option>
 			</select>
 		</div>
 		<div>
-			<label for="chasing">CHASING</label></br>
+			<label for="chasing">CHASING</label>
 			<select id="chasing" name="chasing">
 				<option value = False>False</option>
                                 <option value = True>True</option>
 			</select>
 		</div>
 		<div>
-			<label for="climbing">CLIMBING</label></br>
+			<label for="climbing">CLIMBING</label>
 			<select id="climbing" name="climbing">
                                 <option value = False>False</option>
                                 <option value = True>True</option>
@@ -78,85 +87,87 @@
                                 </select>
                         </div>
 			<div>
-                                <label for="eating">EATING</label></br>
+                                <label for="eating">EATING</label>
                                 <select id="eating" name="eating">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="foraging">FORAGING</label></br>
+                                <label for="foraging">FORAGING</label>
                                 <select id="foraging" name="foraging">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-				<label for="other_activities">OTHER ACTIVITIES</label><br>
+				<label for="other_activities">OTHER ACTIVITIES</label>
 				<input type="text" name="other_activities" id="other_activities">
 			</div>
 			<div>
-                                <label for="kuks">KUKS</label></br>
+                                <label for="kuks">KUKS</label>
                                 <select id="kuks" name="kuks">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="quaas">QUAAS</label></br>
+                                <label for="quaas">QUAAS</label>
                                 <select id="quaas" name="quaas">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="moans">MOANS</label></br>
+                                <label for="moans">MOANS</label>
                                 <select id="moans" name="moans">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="tail_flags">TAIL FLAGS</label></br>
+                                <label for="tail_flags">TAIL FLAGS</label>
                                 <select id="tail_flags" name="tail_flags">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="tail_twitch">TAIL TWITCHES</label></br>
+                                <label for="tail_twitch">TAIL TWITCHES</label>
                                 <select id="tail_twitch" name="tail_twitch">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="approaches">APPROACHES</label></br>
+                                <label for="approaches">APPROACHES</label>
                                 <select id="approaches" name="approaches">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="indifferent">INDIFFERENT</label></br>
+                                <label for="indifferent">INDIFFERENT</label>
                                 <select id="indifferent" name="indifferent">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-                                <label for="runs_from">RUNS FROM</label></br>
+                                <label for="runs_from">RUNS FROM</label>
                                 <select id="runs_from" name="runs_from">
                                         <option value = False>False</option>
                                         <option value = True>True</option>
                                 </select>
                         </div>
 			<div>
-				<label for="other_interactions">OTHER INTERACTIONS</label></br>
-				<input type="text" id="other_interactions" name="other_interactions"
-			</div>>
+				<label for="other_interactions">OTHER INTERACTIONS</label>
+				<input type="text" id="other_interactions" name="other_interactions">
+			</div>></br>
+
 			<input type="submit" value="ADD">
 		</form></br>
+		</br>
 		<a href="/sightings">Back to Lists</a>
 		<script>
 </html>

@@ -47,6 +47,9 @@ def update(request,unique_squirrel_id):
     if request.method == 'POST':
         squirrel.latitude = request.POST['latitude']
         squirrel.longitude = request.POST['longitude']
+        squirrel.shift = request.POST['shift']
+        squirrel.date = request.POST['date']
+        squirrel.age = request.POST['age']
         squirrel.save()
         return render(request, 'sightings/detail.html', context)
 

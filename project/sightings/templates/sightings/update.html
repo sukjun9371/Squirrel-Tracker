@@ -6,15 +6,19 @@
 			{% csrf_token %}
 			 Latitude : <input type='float' name='latitude' id='latitude'></br>
 		 	Longitude : <input type='float' name='longitude' id='longitude'></br>
-			</ul>
+			Unique Squirrel ID : {{ squirrel.unique_squirrel_id }} </br>
+			Shift : <select name='shift' id='shift'> 
+					<option value = "AM">AM</option>
+					<option value = "PM">PM</option>
+			</select></br>
+			Date : <input type='date' name='date' id='date'></br>
+			Age : <select name='age' id='age'>
+				<option value='adult'>Adult</option>
+				<option value='juvenile'>Juvenile</option>
+				<option value='unknown'>Unknown</option>
+			</select></br>
 			<input type="submit" value="EDIT">
 		</form>
-		<ul>
-			<li> Unique Squirrel ID : {{squirrel.unique_squirrel_id}} </li>
-			<li> Shift : {{squirrel.shift}} </li>
-			<li> Date : {{squirrel.date}} </li>
-			<li> Age : {{squirrel.age}} </li>
-		</ul>
 		</br>
 	<a href="/sightings/{{ squirrel.unique_squirrel_id }}">BACK</a>
 </html>

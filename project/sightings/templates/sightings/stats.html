@@ -1,14 +1,36 @@
-<html>
-        <body>
-	{% for squirrel in squirrels %}
-	<strong> {{squirrel.unique_squirrel_id}}</strong>
-        <ul>
-		<li> {{ squirrel.location }} </li>
-                <li> {{ squirrel.shift }} </li>
-		<li> {{ squirrel.date }} </li>
-                <li> {{ squirrel.age }} </li>
-		<li> {{ squirrel.primary_fur_color }} </li>
-        </ul>
-        {% endfor %}
-        </body>
-</html>
+{% extends 'sightings/base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+<div class="jumbotron">
+        <div class="container">
+                <h1 class="display-3">Squirrel Stats</h1>
+                <p>
+                "Basic statistic for squirrels in Central Park."
+                </p>
+        </div>
+</div>
+
+<div class="container">
+        <div class="row">
+                {% for squirrel in squirrels %}
+                <div class="col-md-4">
+                        <h2> {{squirrel.unique_squirrel_id }} </h2>
+                        <p>
+                        <ul>
+				<li> Location : {{ squirrel.location }} </li>
+                		<li> Date : {{ squirrel.date }} </li>
+                		<li> Age : {{ squirrel.age }} </li>
+                		<li> Primary Fur Color : {{ squirrel.primary_fur_color }} </li>
+				<li> Highlight Fur Color : {{ squirrel.highlight_fur_color }} </li>
+                        </ul>
+                        </p>
+                </div>
+                {% endfor %}
+        </div>
+        <hr>
+</div>
+
+{% endblock %}

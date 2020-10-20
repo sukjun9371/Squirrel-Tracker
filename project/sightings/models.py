@@ -130,31 +130,44 @@ class Squirrel(models.Model):
             default=""
             )
 
-    running = models.BooleanField(
+    TRUE = 'TRUE'
+    FALSE = 'FALSE'
+
+    BOOLEAN_CHOICES = [
+            (TRUE,_('TRUE')),
+            (FALSE,_('FALSE')),
+            ]
+
+    running = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Was the squirrel running?'),
-            default=False,
             )
 
-    chasing = models.BooleanField(
+    chasing = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Was the squirrel chasing something?'),
-            default=False,
             )
 
 
-    climbing = models.BooleanField(
+    climbing = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Was the squirrel climbing?'),
-            default=False,
             )
 
 
-    eating = models.BooleanField(
+    eating = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Was the squirrel eating?'),
-            default=False,
             )
 
-    foraging = models.BooleanField(
+    foraging = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Was the squirrel foraging?'),
-            default=False,
             )
 
     other_activities = models.CharField(
@@ -163,44 +176,52 @@ class Squirrel(models.Model):
             default=""
             )
 
-    kuks = models.BooleanField(
+    kuks = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Squirrel was heard kukking, a chirpy vocal communication used for a variety of reasons.'),
-            default=False,
             )
 
-    quaas = models.BooleanField(
+    quaas = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Squirrel was heard quaaing, an elongated vocal communication which can indicate the presence of a ground predator such as a dog.'),
-            default=False,
             )
 
-    moans = models.BooleanField(
+    moans = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_('Squirrel was heard moaning, a high-pitched vocal communication which can indicate the presence of an air predator such as a hawk.'),
-            default=False,
             )
 
-    tail_flags = models.BooleanField(
+    tail_flags = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_("Squirrel was seen flagging its tail. Flagging is a whipping motion used to exaggerate squirrel's size and confuse rivals or predators. Looks as if the squirrel is scribbling with tail into the air." ),
-            default=False,
             )
 
-    tail_twitch = models.BooleanField(
+    tail_twitch = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_("Squirrel was seen twitching its tail. Looks like a wave running through the tail, like a breakdancer doing the arm wave. Often used to communicate interest, curiosity."),
-            default=False,
             )
 
-    approaches = models.BooleanField(
+    approaches = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_("Squirrel was seen approaching human, seeking food."),
-            default=False,    
             )
 
-    indifferent = models.BooleanField(
+    indifferent = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_("Squirrel was indifferent to human presence."),
-            default=False,
             )
 
-    runs_from = models.BooleanField(
+    runs_from = models.CharField(
+            max_length = 10,
+            choices = BOOLEAN_CHOICES,
             help_text=_("Squirrel was seen running from humans, seeing them as a threat."),
-            default=False,
             )
 
     other_interactions = models.CharField(

@@ -6,30 +6,54 @@
 
 <div class="jumbotron">
         <div class="container">
-                <h1 class="display-3">Squirrel Stats</h1>
+                <h1 class="display-3">Sightings Stats</h1>
                 <p>
-                "Basic statistic for squirrels in Central Park."
+                "General stats for sightings in Central Park."
                 </p>
         </div>
 </div>
 
 <div class="container">
-        <div class="row">
-                {% for squirrel in squirrels %}
-                <div class="col-md-4">
-                        <h2> {{squirrel.unique_squirrel_id }} </h2>
-                        <p>
-                        <ul>
-				<li> Location : {{ squirrel.location }} </li>
-                		<li> Date : {{ squirrel.date }} </li>
-                		<li> Age : {{ squirrel.age }} </li>
-                		<li> Primary Fur Color : {{ squirrel.primary_fur_color }} </li>
-				<li> Highlight Fur Color : {{ squirrel.highlight_fur_color }} </li>
-                        </ul>
-                        </p>
-                </div>
-                {% endfor %}
-        </div>
+	<h2> Total Number of Sightings : 3023 </h2>
+	<p>
+	<ul>
+		<li> Number of sightings in AM shift : 1347 </li>
+		<li> Number of sightings in PM shift : 1676 </li>
+	</ul>
+	</p>
+
+	<p>
+	<ul>
+		<li> Number of ADULT squirrels : 2568 </li>
+		<li> Number of JUVENILE squirrels : 330 </li>
+	</ul>
+	</p>
+
+	<p>
+	<ul>
+		<li> Number of sightings found ABOVE GROUND : 843 </li>
+		<li> Number of sightings found on GROUND PLANE : 2116 </li>
+	</ul>
+	</p>
+
+	<p>
+	<ul>
+		<li> Number of squirrels with primary BLACK fur color : 103 </li>
+		<li> Number of squirrels with primary GRAY fur color : 2473 </li>
+		<li> Number of squirrels with primary CINNAMON fur color: 392 </li>
+	</ul>
+	</p>
+
+	<p>
+	<ul>
+		<li> Number of squirrels found RUNNING : 730 </li>
+		<li> Number of squirrels found CHASING : 279 </li>
+		<li> Number of squirrels found CLIMBING : 658 </li>
+		<li> Number of squirrels found EATING : 760 </li>
+		<li> Number of squirrels found FORAGING : 1435 </li>
+	</ul>
+	</p>
+     
         <hr>
 </div>
 

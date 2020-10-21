@@ -57,13 +57,13 @@ class Squirrel(models.Model):
             default="1",
             )
 
-    Adult = 'adult'
-    Juvenile = 'juvenile'
+    Adult = 'Adult'
+    Juvenile = 'Juvenile'
     Unknown = 'unknown'
 
     AGE_CHOICES = [
-            (Adult,_('adult')),
-            (Juvenile,_('juvenile')),
+            (Adult,_('Adult')),
+            (Juvenile,_('Juvenile')),
             (Unknown,_('unknown')),
             ]
 
@@ -75,14 +75,14 @@ class Squirrel(models.Model):
              )
 
 
-    Gray = 'gray'
-    Cinnamon = 'cinnamon'
-    Black = 'black'
+    Gray = 'Gray'
+    Cinnamon = 'Cinnamon'
+    Black = 'Black'
 
     COLOR_CHOICES = [
-            (Gray,_('gray')),
-            (Cinnamon, _('cinnamon')),
-            (Black, _('black')),
+            (Gray,_('Gray')),
+            (Cinnamon, _('Cinnamon')),
+            (Black, _('Black')),
             ]
 
     primary_fur_color = models.CharField(
@@ -263,6 +263,7 @@ class Squirrel(models.Model):
 
     def __str__(self):
         return self.unique_squirrel_id
+
 
 
 

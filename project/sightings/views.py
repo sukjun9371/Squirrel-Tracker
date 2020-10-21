@@ -26,9 +26,40 @@ def add(request):
 
 def stats(request):
     squirrels = Squirrel.objects.all()
+    AM = Squirrel.objects.filter(shift="AM")
+    PM = Squirrel.objects.filter(shift="PM")
+    Adult = Squirrel.objects.filter(age="Adult")
+    Juven = Squirrel.objects.filter(age="Juvenile")
+    AbGr = Squirrel.objects.filter(location="Above Ground")
+    GrPl =Squirrel.objects.filter(location="Ground Plane")
+    Gray = Squirrel.objects.filter(primary_fur_color="Gray")
+    Cinnamon = Squirrel.objects.filter(primary_fur_color="Cinnamon")
+    Black = Squirrel.objects.filter(primary_fur_color="Black")
+    Run = Squirrel.objects.filter(running="TRUE")
+    Cha = Squirrel.objects.filter(chasing="TRUE")
+    Cli = Squirrel.objects.filter(climbing="TRUE")
+    Eat = Squirrel.objects.filter(eating="TRUE")
+    For = Squirrel.objects.filter(foraging="TRUE")
+
+        
     context = {
             'squirrels' : squirrels,
+            'AM': AM,
+            'PM' : PM,
+            'Adult' : Adult,
+            'Juven' : Juven,
+            'AbGr' : AbGr,
+            'GrPl' : GrPl,
+            'Gray' : Gray,
+            'Cinnamon' : Cinnamon,
+            'Black' : Black,
+            'Run' : Run,
+            'Cha' : Cha,
+            'Cli' : Cli,
+            'Eat' : Eat,
+            'For' : For,
             }
+
     return render(request,'sightings/stats.html',context)
 
 def create(request):

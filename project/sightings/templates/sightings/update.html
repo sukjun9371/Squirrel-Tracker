@@ -19,20 +19,20 @@
 			<div class="col-md-4 themed-grid-col"><strong>Unique Squirrel ID</strong></div>
                         <div class="col-md-8 themed-grid-col">{{squirrel.unique_squirrel_id}}</div>
 			<div class="col-md-4 themed-grid-col"><strong>Latitude</strong></div>
-                        <div class="col-md-8 themed-grid-col"><input type='float' name='latitude' id='latitude'></div>
+			<div class="col-md-8 themed-grid-col"><input type='float' name='latitude' id='latitude'>    Current: {{squirrel.latitude}}</div>
 			<div class="col-md-4 themed-grid-col"><strong>Longitude</strong></div>
-                        <div class="col-md-8 themed-grid-col"><input type='float' name='longitude' id='longitude'></div>
+			<div class="col-md-8 themed-grid-col"><input type='float' name='longitude' id='longitude'>   Current: {{squirrel.longitude}}</div>
 			<div class="col-md-4 themed-grid-col"><strong>Shift</strong></div>
 			<div class="col-md-8 themed-grid-col"><select name="shift" id="shift">
 					<option value="AM">AM</option>
-					<option value="PM">PM</option></select></div>
+					<option value="PM">PM</option></select>    Current:{{squirrel.shift}}</div>
 			<div class="col-md-4 themed-grid-col"><strong>Date</strong></div>
-                        <div class="col-md-8 themed-grid-col"><input type='date' name='date' id='date'></div>
+			<div class="col-md-8 themed-grid-col"><input type='date' name='date' id='date'>    Current: {{squirrel.date}}</div>
 			<div class="col-md-4 themed-grid-col"><strong>Age</strong></div>
                         <div class="col-md-8 themed-grid-col"><select name='age' id='age'>
-                                <option value='adult'>Adult</option>
-                                <option value='juvenile'>Juvenile</option>
-				<option value='unknown'>Unknown</option></select></div>
+                                <option value='Adult'>Adult</option>
+                                <option value='Juvenile'>Juvenile</option>
+				<option value='unknown'>Unknown</option></select>    Current: {{squirrel.age}}</div>
 			<input type="submit" value="EDIT">
                 </div>
                 </form>

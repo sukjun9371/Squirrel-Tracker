@@ -35,11 +35,7 @@ def stats(request):
     Gray = Squirrel.objects.filter(primary_fur_color="Gray")
     Cinnamon = Squirrel.objects.filter(primary_fur_color="Cinnamon")
     Black = Squirrel.objects.filter(primary_fur_color="Black")
-    Run = Squirrel.objects.filter(running="TRUE")
-    Cha = Squirrel.objects.filter(chasing="TRUE")
-    Cli = Squirrel.objects.filter(climbing="TRUE")
-    Eat = Squirrel.objects.filter(eating="TRUE")
-    For = Squirrel.objects.filter(foraging="TRUE")
+    SpeLoc = Squirrel.objects.filter(specific_location="")
 
         
     context = {
@@ -53,11 +49,7 @@ def stats(request):
             'Gray' : Gray,
             'Cinnamon' : Cinnamon,
             'Black' : Black,
-            'Run' : Run,
-            'Cha' : Cha,
-            'Cli' : Cli,
-            'Eat' : Eat,
-            'For' : For,
+            'SpeLoc' : SpeLoc,
             }
 
     return render(request,'sightings/stats.html',context)

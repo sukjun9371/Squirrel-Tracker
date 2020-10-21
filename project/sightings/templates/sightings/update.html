@@ -4,28 +4,31 @@
   
 {% block main %}
 
-<body class="py-4">
+<div class="jumbotron">
         <div class="container">
                 <h1> {{squirrel.unique_squirrel_id}}</h1>
                 <p class="lead">
                 "You can update the information about the sighting if necessary"
                 </p>
+	</div>
+</div>
+	<div class="container">
 		<form id="submit" method="post">
 				  {% csrf_token %}
                 <div class="row mb-3">
-                        <div class="col-md-4 themed-grid-col">Unique Squirrel ID</div>
+			<div class="col-md-4 themed-grid-col"><strong>Unique Squirrel ID</strong></div>
                         <div class="col-md-8 themed-grid-col">{{squirrel.unique_squirrel_id}}</div>
-                        <div class="col-md-4 themed-grid-col">Latitude</div>
+			<div class="col-md-4 themed-grid-col"><strong>Latitude</strong></div>
                         <div class="col-md-8 themed-grid-col"><input type='float' name='latitude' id='latitude'></div>
-                        <div class="col-md-4 themed-grid-col">Longitude</div>
+			<div class="col-md-4 themed-grid-col"><strong>Longitude</strong></div>
                         <div class="col-md-8 themed-grid-col"><input type='float' name='longitude' id='longitude'></div>
-                        <div class="col-md-4 themed-grid-col">Shift</div>
+			<div class="col-md-4 themed-grid-col"><strong>Shift</strong></div>
 			<div class="col-md-8 themed-grid-col"><select name="shift" id="shift">
 					<option value="AM">AM</option>
 					<option value="PM">PM</option></select></div>
-                        <div class="col-md-4 themed-grid-col">Date</div>
+			<div class="col-md-4 themed-grid-col"><strong>Date</strong></div>
                         <div class="col-md-8 themed-grid-col"><input type='date' name='date' id='date'></div>
-                        <div class="col-md-4 themed-grid-col">Age</div>
+			<div class="col-md-4 themed-grid-col"><strong>Age</strong></div>
                         <div class="col-md-8 themed-grid-col"><select name='age' id='age'>
                                 <option value='adult'>Adult</option>
                                 <option value='juvenile'>Juvenile</option>
@@ -33,7 +36,8 @@
 			<input type="submit" value="EDIT">
                 </div>
                 </form>
-        <a href="/sightings/{{ squirrel.unique_squirrel_id }}">BACK</a>
+        	<a class="btn btn-outline-primary" href="/sightings/{{ squirrel.unique_squirrel_id }}">BACK</a>
+	</div>	
                 {% endblock %}
 
 

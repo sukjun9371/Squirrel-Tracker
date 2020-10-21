@@ -41,7 +41,7 @@ class Squirrel(models.Model):
             max_length=10,
             help_text=_('AM or PM'),
             choices=SHIFT_CHOICES,
-            default=Am,
+            default=Pm,
             )
 
     date = models.DateField(
@@ -71,6 +71,7 @@ class Squirrel(models.Model):
             max_length=20,
             help_text=_('your guess: how old was the squirrel?'),
             choices=AGE_CHOICES,
+            default=Adult,
              )
 
 
@@ -141,12 +142,16 @@ class Squirrel(models.Model):
     running = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Was the squirrel running?'),
             )
 
     chasing = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Was the squirrel chasing something?'),
             )
 
@@ -154,6 +159,8 @@ class Squirrel(models.Model):
     climbing = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Was the squirrel climbing?'),
             )
 
@@ -161,12 +168,16 @@ class Squirrel(models.Model):
     eating = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Was the squirrel eating?'),
             )
 
     foraging = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Was the squirrel foraging?'),
             )
 
@@ -179,48 +190,64 @@ class Squirrel(models.Model):
     kuks = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Squirrel was heard kukking, a chirpy vocal communication used for a variety of reasons.'),
             )
 
     quaas = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Squirrel was heard quaaing, an elongated vocal communication which can indicate the presence of a ground predator such as a dog.'),
             )
 
     moans = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_('Squirrel was heard moaning, a high-pitched vocal communication which can indicate the presence of an air predator such as a hawk.'),
             )
 
     tail_flags = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_("Squirrel was seen flagging its tail. Flagging is a whipping motion used to exaggerate squirrel's size and confuse rivals or predators. Looks as if the squirrel is scribbling with tail into the air." ),
             )
 
     tail_twitch = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_("Squirrel was seen twitching its tail. Looks like a wave running through the tail, like a breakdancer doing the arm wave. Often used to communicate interest, curiosity."),
             )
 
     approaches = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_("Squirrel was seen approaching human, seeking food."),
             )
 
     indifferent = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_("Squirrel was indifferent to human presence."),
             )
 
     runs_from = models.CharField(
             max_length = 10,
             choices = BOOLEAN_CHOICES,
+            default=FALSE,
+            blank=True,
             help_text=_("Squirrel was seen running from humans, seeing them as a threat."),
             )
 

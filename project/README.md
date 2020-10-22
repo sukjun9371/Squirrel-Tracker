@@ -16,4 +16,4 @@ There are total two pages:
  
  2. Group Name: Ying & Sukjoon
  
- 3. UNIs: [yw3693, sj3070]
+ 3. UNIs: [yw3593, sj3070]

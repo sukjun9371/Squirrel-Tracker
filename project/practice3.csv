@@ -1,4 +1,0 @@
-X,Y,Unique Squirrel ID,Hectare,Shift,Date,Hectare Squirrel Number,Age,Primary Fur Color,Highlight Fur Color,Combination of Primary and Highlight Color,Color notes,Location,Above Ground Sighter Measurement,Specific Location,Running,Chasing,Climbing,Eating,Foraging,Other Activities,Kuks,Quaas,Moans,Tail flags,Tail twitches,Approaches,Indifferent,Runs from,Other Interactions,Lat/Long
-1,2,PRAC_1,37F,PM,10142018,3,,,,+,,,,,FALSE,FALSE,FALSE,FALSE,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,POINT (-73.9561344937861 40.7940823884086)
-2,1,PRAC_2,37E,PM,10062018,3,Adult,Gray,Cinnamon,Gray+Cinnamon,,Ground Plane,FALSE,,TRUE,FALSE,FALSE,FALSE,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,me,POINT (-73.9570437717691 40.794850940803904)
-3,3,PRAC_3,02E,AM,10102018,3,Adult,Cinnamon,,Cinnamon+,,Above Ground,4,,FALSE,FALSE,TRUE,FALSE,FALSE,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,,POINT (-73.9768311751004 40.76671780725581)
